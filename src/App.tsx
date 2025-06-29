@@ -7,7 +7,7 @@ import { sampleContent, SampleType } from './utils/sampleContent';
 import PDFUploader from './components/PDFUploader';
 import DifficultySelector from './components/DifficultySelector';
 import GameScreen from './components/GameScreen';
-import GeminiLogo from './components/GeminiLogo';
+import BoltLogo from './components/BoltLogo';
 
 type AppState = 'menu' | 'upload' | 'processing' | 'difficulty' | 'game' | 'sample-select';
 
@@ -161,14 +161,19 @@ function App() {
                       Turn study notes into fun, animated Hangman games using AI. Upload a PDF or try our sample content—no login needed!
                     </p>
                     
-                    {/* Powered by Gemini Badge */}
+                    {/* Powered by Bolt.new Badge */}
                     <div className="flex items-center justify-center lg:justify-start gap-2 mt-1 sm:mt-2">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 border border-white/30 shadow-lg">
-                        <GeminiLogo className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <a 
+                        href="https://bolt.new" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-200"
+                      >
+                        <BoltLogo className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span className="text-white text-xs sm:text-sm font-medium">
-                          Powered by <span className="font-bold">Gemini</span> Google AI
+                          Powered by <span className="font-bold">Bolt.new</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                   </div>
 
