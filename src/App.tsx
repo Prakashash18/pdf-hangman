@@ -104,11 +104,30 @@ function App() {
     setIsProcessing(false);
   };
 
+  // Top Left Logo Component
+  const TopLeftLogo = () => (
+    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50">
+      <a 
+        href="https://bolt.new" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-2 bg-white/20 backdrop-blur-sm rounded-xl shadow-lg hover:bg-white/30 transition-all duration-200 border border-white/30"
+      >
+        <BoltLogo className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+        <span className="text-white text-xs sm:text-sm font-bold hidden sm:inline">
+          Bolt.new
+        </span>
+      </a>
+    </div>
+  );
+
   return (
     <div className="h-screen overflow-hidden">
       {/* Menu Screen */}
       {appState === 'menu' && (
         <div className="h-screen bg-gradient-to-br from-purple-500 via-blue-500 to-indigo-600 overflow-hidden relative">
+          <TopLeftLogo />
+          
           {/* Background decorative elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
@@ -244,6 +263,8 @@ function App() {
       {/* Sample Selection Screen */}
       {appState === 'sample-select' && (
         <div className="h-screen bg-gradient-to-br from-green-400 via-teal-500 to-blue-600 flex items-center justify-center p-2 sm:p-4 relative overflow-hidden">
+          <TopLeftLogo />
+          
           {/* Background decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
@@ -371,6 +392,8 @@ function App() {
       {/* Upload Screen */}
       {appState === 'upload' && (
         <div className="h-screen bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 flex items-center justify-center p-2 sm:p-4 relative overflow-hidden">
+          <TopLeftLogo />
+          
           {/* Background decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
@@ -421,6 +444,8 @@ function App() {
       {/* Processing Screen */}
       {appState === 'processing' && (
         <div className="h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 flex items-center justify-center p-2 sm:p-4 relative overflow-hidden">
+          <TopLeftLogo />
+          
           {/* Animated background elements */}
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-white/20 rounded-full animate-ping"></div>
@@ -493,6 +518,8 @@ function App() {
       {/* Difficulty Selection Screen */}
       {appState === 'difficulty' && (
         <div className="h-screen bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 flex items-center justify-center p-2 sm:p-4 relative overflow-hidden">
+          <TopLeftLogo />
+          
           {/* Background decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>

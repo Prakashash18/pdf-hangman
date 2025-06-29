@@ -5,6 +5,7 @@ import HangmanDrawing from './HangmanDrawing';
 import WordDisplay from './WordDisplay';
 import OnScreenKeyboard from './OnScreenKeyboard';
 import GameStats from './GameStats';
+import BoltLogo from './BoltLogo';
 import { soundManager } from '../utils/soundManager';
 
 interface GameScreenProps {
@@ -180,10 +181,29 @@ const GameScreen: React.FC<GameScreenProps> = ({
     onBackToDifficulty();
   };
 
+  // Top Left Logo Component for Game Screen
+  const TopLeftLogo = () => (
+    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50">
+      <a 
+        href="https://bolt.new" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-2 bg-white/20 backdrop-blur-sm rounded-xl shadow-lg hover:bg-white/30 transition-all duration-200 border border-white/30"
+      >
+        <BoltLogo className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" />
+        <span className="text-white text-xs sm:text-sm font-bold hidden sm:inline">
+          Bolt.new
+        </span>
+      </a>
+    </div>
+  );
+
   // Stats Screen - shown after each completed question
   if (showStatsScreen) {
     return (
       <div className="h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 relative overflow-hidden">
+        <TopLeftLogo />
+        
         {/* Background decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
@@ -303,6 +323,8 @@ const GameScreen: React.FC<GameScreenProps> = ({
 
   return (
     <div className="h-screen bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 relative overflow-hidden flex flex-col">
+      <TopLeftLogo />
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
@@ -312,7 +334,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
 
       <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-4 py-1 sm:py-2 h-full flex flex-col">
         {/* Compact Header */}
-        <div className="flex items-center justify-between mb-1 sm:mb-2 flex-shrink-0">
+        <div className="flex items-center justify-between mb-1 sm:mb-2 flex-shrink-0 pt-12 sm:pt-16">
           <button
             onClick={handleBackToMenu}
             className="flex items-center gap-1 sm:gap-2 px-2 py-1.5 sm:px-3 sm:py-2 bg-white/20 backdrop-blur-sm rounded-xl shadow-lg hover:bg-white/30 transition-all duration-200 text-white font-medium border-2 border-white/30 text-xs sm:text-sm"
